@@ -1,0 +1,60 @@
+﻿
+@{
+
+}
+
+
+
+@{
+    int j = 0;
+    foreach (FirstASP.Models.Info i in ViewBag.data)
+    {
+        if (ViewBag.Maket != null)
+        {
+            if (ViewBag.Maket.admin == true)
+            {
+                @Html.ActionLink("Изменить", "Change", "Home", new { @id = i.constract }, new { @class = "ChangeDialog", data_dialog_title = "Изменение информации" })
+            }
+        }
+        <img src="@i.src" alt="Картинка"
+             width="150" class="logo" align="left"
+             vspace="5" hspace="5">
+        <p>Страна производитель : @i.country</p>
+        <p>Год выпуска : @i.year</p>
+        <p>Кол-во на складе : @i.count</p>
+        <p>Техническая хар-ка : @i.info</p>
+
+        <a href="/Home/Order?n=@i.id">
+            Оформить заказ
+        </a>
+        j++;
+    }
+    if (ViewBag.Maket != null)
+    {
+        if (ViewBag.Maket.admin == true&&j==0)
+        {
+            @Html.ActionLink("Добавить", "Add", "Home", new { id = ViewBag.n  }, new { @class = "ChangeDialog", data_dialog_title = "Добавление информации" })
+        }
+    }
+}
+
+<script>
+    $(document).ready(function () {
+
+        $.ajaxSetup({ cache: false });
+
+        $(".ChangeDialog").on("click", function (e) {
+            e.preventDefault();
+
+            $("<div></div>")
+                .addClass("dialog")
+                .appendTo("body")
+                .dialog({
+                    title: $(this).attr("data-dialog-title"),
+                    close: function () { $(this).remove() },
+                    modal: true
+                })
+                .load(this.href);
+        });
+    });
+</script>

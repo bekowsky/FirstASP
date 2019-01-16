@@ -1,0 +1,15 @@
+﻿@model FirstASP.Models.Goods
+
+<h3>Удалить данный товар?</h3>
+<div>
+    <p>Марка: @Html.DisplayFor(m => m.mark)</p>
+    <p>Модель: @Html.DisplayFor(m => m.model)</p>
+    <p>Цена: @Html.DisplayFor(m => m.price)</p>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <input type="submit" value="Удалить" />
+    }
+</div>

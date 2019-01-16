@@ -1,0 +1,78 @@
+﻿
+@{
+
+}
+
+<title></title>
+
+
+@{
+    if (@ViewBag.num == 1)
+    {
+        <h2>Телефоны</h2>
+    }
+    else if (ViewBag.num == 2)
+    {
+        <h2>Ноутбуки</h2>
+    }
+    else if (ViewBag.num == 3)
+    {
+        <h2>Планшеты</h2>
+    }
+}
+
+@{
+    int type = 0;
+    foreach (FirstASP.Models.Goods g in ViewBag.data)
+    {
+        type = g.type_id;
+        if (ViewBag.Maket != null)
+        {
+            if (ViewBag.Maket.admin == true)
+            {
+                @Html.ActionLink("Изменить", "Edit", "Home", new {@id = g.id, @num = type }, new { @class = "viewDialog", data_dialog_title = "Изменение товара" })
+                            @Html.ActionLink("Удалить", "Delete", "Home", new { @id = g.id, @num = type }, new { @class = "viewDialog", data_dialog_title = "Удаление товара" })
+                        }
+        }
+
+        <dl class=" goods">
+            <dt>Марка</dt>
+            <dd><a class="link" href="/Home/FullInformation/?n=@g.id"> @g.mark</a></dd>
+            <dt>Модель</dt>
+            <dd>@g.model</dd>
+            <dt>Цена</dt>
+            <dd>@g.price руб.</dd>
+        </dl>
+       
+        }
+    if (ViewBag.Maket != null)
+    {
+        if (ViewBag.Maket.admin == true)
+        {
+            @Html.ActionLink("Добавить", "Create", "Home", new { @num = type }, new { @class = "viewDialog", data_dialog_title = "Добавление товара" })
+        }
+    }
+
+}
+
+
+<script>
+    $(document).ready(function () {
+
+        $.ajaxSetup({ cache: false });
+
+        $(".viewDialog").on("click", function (e) {
+            e.preventDefault();
+
+            $("<div></div>")
+                .addClass("dialog")
+                .appendTo("body")
+                .dialog({
+                    title: $(this).attr("data-dialog-title"),
+                    close: function () { $(this).remove() },
+                    modal: true
+                })
+                .load(this.href);
+        });
+    });
+</script>

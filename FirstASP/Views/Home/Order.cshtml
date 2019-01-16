@@ -1,0 +1,47 @@
+﻿
+@{
+
+}
+
+
+<div>
+    @using (Ajax.BeginForm("Order", new AjaxOptions { OnSuccess = "OnSuccessForm", UpdateTargetId = "results" }))
+    {
+        <h1>Введите ваши Данные</h1>
+        @Html.Hidden("num", (object)Convert.ToInt32(ViewBag.num))
+
+        <p>
+            <label>ФИО:</label><br />
+            <input type="text" name="name" />
+
+        </p>
+
+        <p>
+            <label>Номер телефона:</label><br />
+            <input type="text" name="number1" />
+        </p>
+
+        <p>
+            <label>Адресс:</label><br />
+            <input type="text" name="street" />
+        </p>
+
+        <p>
+            <label>email:</label><br />
+            <input type="text" name="mail" />
+        </p>
+
+        <p>
+
+            <input type="submit" value="Отправить" />
+        </p>
+
+    }
+
+    <div id="results"></div>
+</div>
+<script type="text/javascript">
+    function OnSuccessForm() {
+        alert('Ваш заказ принят');      
+    }
+</script>

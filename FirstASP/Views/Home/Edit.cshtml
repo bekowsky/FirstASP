@@ -1,0 +1,26 @@
+﻿@model FirstASP.Models.Goods
+<div>
+    @using (Html.BeginForm())
+    {
+    <div>
+        @Html.AntiForgeryToken()
+        @Html.Hidden("type_id", (object)Convert.ToInt32(ViewBag.num))
+    </div>
+
+        <div>
+            @Html.LabelFor(model => model.mark)
+            <p>@Html.EditorFor(model => model.mark)</p>
+        </div>
+
+        <div>
+            @Html.LabelFor(model => model.model)
+            <p>@Html.EditorFor(model => model.model)</p>
+        </div>
+
+        <div>
+            @Html.LabelFor(model => model.price)
+            <p>@Html.EditorFor(model => model.price)</p>
+        </div>
+        <p><input type="submit" value="Сохранить" /></p>
+    }
+</div>

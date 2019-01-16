@@ -1,0 +1,33 @@
+﻿@{
+   
+}
+
+<div>
+
+
+    @{
+        foreach (FirstASP.Models.Type t in ViewBag.data)
+        {
+            string picture = "/Images/" + @t.type + ".jpg";
+            picture = picture.Replace(" ", string.Empty);
+            <div>
+                <p><a href="/Home/Goods/?n=@t.id">@t.type</a></p>
+                <a a href="/Home/Goods/?n=@t.id">
+                    <img src="@picture" alt="Логотип"
+                         height="200" class="logo">
+                </a>
+            </div>
+        }
+    }
+    <div id="modDialog" class="modal fade">
+        <div id="dialogContent" class="modal-dialog">
+        </div>
+    </div>
+
+    <style>
+        p {
+            text-align: center;
+        }
+    </style>
+
+</div>

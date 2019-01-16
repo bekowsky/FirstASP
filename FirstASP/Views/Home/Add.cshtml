@@ -1,0 +1,35 @@
+﻿
+@model FirstASP.Models.Info
+<div>
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+    <div>
+        @Html.Hidden("constract", (object)Convert.ToInt32(ViewBag.n))
+    </div>
+
+        <div>
+            @Html.LabelFor(model => model.country)
+            <p>@Html.EditorFor(model => model.country)</p>
+        </div>
+
+        <div>
+            @Html.LabelFor(model => model.year)
+            <p>@Html.EditorFor(model => model.year)</p>
+        </div>
+
+        <div>
+            @Html.LabelFor(model => model.count)
+            <p>@Html.EditorFor(model => model.count)</p>
+        </div>
+        <div>
+            @Html.LabelFor(model => model.info)
+            <p>@Html.EditorFor(model => model.info)</p>
+        </div> <div>
+            @Html.LabelFor(model => model.src)
+            <p>@Html.EditorFor(model => model.src)</p>
+        </div>
+        <p><input type="submit" value="Добавить" /></p>
+    }
+</div>

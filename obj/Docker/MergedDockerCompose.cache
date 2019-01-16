@@ -1,0 +1,13 @@
+networks:
+  default:
+    external:
+      name: nat
+services:
+  firstasp:
+    build:
+      context: C:\Users\Bekowsky\source\repos\FirstASP\FirstASP
+      dockerfile: Dockerfile
+    image: firstasp
+    ports:
+    - target: 80
+version: '3.4'

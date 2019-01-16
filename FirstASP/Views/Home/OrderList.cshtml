@@ -1,0 +1,37 @@
+﻿
+@{
+
+}
+
+@{
+    int i = 1;
+    foreach (FirstASP.Models.Orders g in ViewBag.Data)
+    {
+
+        <p>Заказ @i</p>
+           
+            <dl class=" goods">
+
+                <dd> @g.id</dd>
+
+                <dd>@g.good_id</dd>
+
+                <dd>@g.FIO</dd>
+                <dd>@g.email</dd>
+                <dd>@g.date</dd>
+                <dd>@g.adress</dd>
+            </dl>
+            <hr>
+            i++;
+        }
+}
+<style>
+    dd {
+        width: 51%;
+        float: left;
+        margin-left: 0;
+        margin-bottom: .3125em;
+        border: 1px solid #BECFC7;
+        padding-left: 10%;
+    }
+</style>
