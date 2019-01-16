@@ -90,7 +90,6 @@ C:\Users\Bekowsky\source\repos\FirstASP\FirstASP\bin\EntityFramework.SqlServer.d
 C:\Users\Bekowsky\source\repos\FirstASP\FirstASP\bin\EntityFramework.xml
 C:\Users\Bekowsky\source\repos\FirstASP\FirstASP\bin\EntityFramework.SqlServer.xml
 C:\Users\Bekowsky\source\repos\FirstASP\FirstASP\bin\Microsoft.AspNet.Identity.Core.dll
-C:\Users\Bekowsky\source\repos\FirstASP\FirstASP\bin\Microsoft.AspNet.Identity.EntityFramework.dll
 C:\Users\Bekowsky\source\repos\FirstASP\FirstASP\bin\Microsoft.AspNet.Identity.Owin.dll
 C:\Users\Bekowsky\source\repos\FirstASP\FirstASP\bin\Microsoft.Owin.dll
 C:\Users\Bekowsky\source\repos\FirstASP\FirstASP\bin\Microsoft.Owin.Host.SystemWeb.dll
@@ -99,7 +98,6 @@ C:\Users\Bekowsky\source\repos\FirstASP\FirstASP\bin\Microsoft.Owin.Security.dll
 C:\Users\Bekowsky\source\repos\FirstASP\FirstASP\bin\Microsoft.Owin.Security.OAuth.dll
 C:\Users\Bekowsky\source\repos\FirstASP\FirstASP\bin\Owin.dll
 C:\Users\Bekowsky\source\repos\FirstASP\FirstASP\bin\Microsoft.AspNet.Identity.Core.xml
-C:\Users\Bekowsky\source\repos\FirstASP\FirstASP\bin\Microsoft.AspNet.Identity.EntityFramework.xml
 C:\Users\Bekowsky\source\repos\FirstASP\FirstASP\bin\Microsoft.AspNet.Identity.Owin.xml
 C:\Users\Bekowsky\source\repos\FirstASP\FirstASP\bin\Microsoft.Owin.xml
 C:\Users\Bekowsky\source\repos\FirstASP\FirstASP\bin\Microsoft.Owin.Host.SystemWeb.xml

@@ -61,7 +61,7 @@ namespace FirstASP.Controllers
             db.SaveChanges();
             return RedirectToAction("Goods", new {n = goods.type_id });
         }
-        // Удаление
+      
         public ActionResult Delete(int id, int num)
         {
             Goods goods = db.Goodss.Find(id);
